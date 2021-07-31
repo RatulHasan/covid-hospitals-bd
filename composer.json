@@ -1,0 +1,20 @@
+{
+    "name": "ratul/covid-hospitals-bd",
+    "description": "COVID Dedicated Hospital's Information for Bangladesh.",
+    "type": "wordpress-plugin",
+    "keywords": [],
+    "homepage": "https://github.com/RatulHasan/covid-hospitals-bd",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Ratul Hasan",
+            "email": "tanjilhasanratul@gmail.com",
+            "homepage": "https://github.com/RatulHasan/"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Covid\\Hospitals\\": "includes/"
+        }
+    }
+}
