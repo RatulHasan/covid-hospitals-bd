@@ -3,7 +3,7 @@
 A simple and nice WordPress plugin for COVID Dedicated Hospital's Information for Bangladesh.
 
 ### Installation
-Installation is fairly straight forward. Download this plugin from [GitHub](https://github.com/RatulHasan/covid-hospitals-bd) and Install.
+Installation is fairly straight forward. Download this plugin from [GitHub](https://github.com/RatulHasan/covid-hospitals-bd/archive/refs/heads/main.zip) and Install.
 
 ### Inspired from:
 https://covidhospitalsbd.com/
