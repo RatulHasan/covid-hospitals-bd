@@ -54,7 +54,7 @@
             foreach ( $all_datas->data as $key => $c19h_available_detail ) {
                 ?>
                 <div class="card box mt-4">
-                    <h4 class="card-header text-center">
+                    <h4 class="card-header">
                         <?php esc_html_e( 'Hospital name:', 'covid-hospitals-bd' ); ?>
                         <?php echo esc_html( $c19h_available_detail->name ); ?>
                     </h4>
@@ -88,13 +88,27 @@
                             </tr>
                             <tr>
                                 <td>
+                                    <?php esc_html_e( 'High flow nasal cannula Beds', 'covid-hospitals-bd' ); ?>
+                                </td>
+                                <td class="text-success text-end">
+                                    <?php
+                                    echo esc_html(
+                                        ( $c19h_available_detail->icu_hfn_beds - $c19h_available_detail->icu_hfn_beds_occupied )
+                                    );
+                                    ?>
+                                </td>
+                                <td class="text-end">
+                                    <?php echo esc_html( ( $c19h_available_detail->icu_hfn_beds ) ); ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
                                     <?php esc_html_e( 'High Dependency Unit', 'covid-hospitals-bd' ); ?>
                                 </td>
                                 <td class="text-success text-end">
                                     <?php
                                     echo esc_html(
-                                        ( $c19h_available_detail->icu_hdu_beds
-                                          - $c19h_available_detail->icu_hdu_beds_occupied )
+                                        ( $c19h_available_detail->icu_hdu_beds - $c19h_available_detail->icu_hdu_beds_occupied )
                                     );
                                     ?>
                                 </td>
@@ -109,8 +123,7 @@
                                 <td class="text-success text-end">
                                     <?php
                                     echo esc_html(
-                                        ( $c19h_available_detail->general_beds
-                                          - $c19h_available_detail->general_beds_occupied )
+                                        ( $c19h_available_detail->general_beds - $c19h_available_detail->general_beds_occupied )
                                     );
                                     ?>
                                 </td>
@@ -120,11 +133,11 @@
                             </tr>
                             </tbody>
                         </table>
-                        <span class="card-link">
+                    </div>
+                    <div class="card-footer">
                             <?php esc_html_e( 'Last update', 'covid-hospitals-bd' ); ?>
                             <?php echo esc_html( human_time_diff( strtotime( $c19h_available_detail->updated_at ) ) . ' ago' ); ?>
-                        </span>
-                    </div>
+                        </div>
                 </div>
                 <?php
             }

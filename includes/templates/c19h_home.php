@@ -12,7 +12,7 @@
 ?>
 <div class="container">
     <div class="row">
-        <div class="col-md-6 offset-md-3 mt-4">
+        <div class="col-md-8 offset-md-2 mt-4">
             <img src="<?php echo esc_url_raw( C19H_ASSETS . '/banner.png' ); ?>" alt="banner">
         </div>
         <div class="col-md-12 text-center mt-4">
@@ -23,10 +23,10 @@
         require_once C19H_INC_DIR . '/templates/c19h_search_form.php';
         ?>
         <div class="col-md-12 text-center mt-4">
-            <h4> <?php esc_html_e( 'Currently available', 'covid-hospitals-bd' ); ?> </h4>
+            <h3 class="font-monospace"> <?php esc_html_e( 'Currently available', 'covid-hospitals-bd' ); ?> </h3>
             <p class="text-sm"><?php esc_html_e( 'Tap on each for details', 'covid-hospitals-bd' ); ?></p>
         </div>
-        <div class="col-md-6 offset-md-3 mt-4">
+        <div class="col-md-8 offset-md-2 mt-4">
             <?php
             foreach ( $c19h_available_details as $key => $c19h_available_detail ) {
                 $class = '';
