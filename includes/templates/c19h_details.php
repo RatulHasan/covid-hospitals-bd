@@ -54,12 +54,10 @@
             foreach ( $all_datas->data as $key => $c19h_available_detail ) {
                 ?>
                 <div class="card box mt-4">
-                    <div class="card-header text-center">
-                        <h4 class="card-title">
-                            <?php esc_html_e( 'Hospital name:', 'covid-hospitals-bd' ); ?>
-                            <?php echo esc_html( $c19h_available_detail->name ); ?>
-                        </h4>
-                    </div>
+                    <h4 class="card-header text-center">
+                        <?php esc_html_e( 'Hospital name:', 'covid-hospitals-bd' ); ?>
+                        <?php echo esc_html( $c19h_available_detail->name ); ?>
+                    </h4>
                     <div class="card-body">
                         <h4 class="card-title">
                             <?php esc_html_e( 'District: ', 'covid-hospitals-bd' ); ?>
