@@ -17,7 +17,9 @@ https://ratulhasan.com/covid-hospitals-bd
 
 ### Bugs, technical hints or contribute
 Please give me feedback, contribute and file technical bugs.
-
+#### Home page
 ![Home page](https://raw.githubusercontent.com/RatulHasan/covid-hospitals-bd/main/assets/Screenshot1.png)
+#### Available Beds
 ![Available Beds](https://raw.githubusercontent.com/RatulHasan/covid-hospitals-bd/main/assets/Screenshot2.png)
-![Hospital](https://raw.githubusercontent.com/RatulHasan/covid-hospitals-bd/main/assets/Screenshot3.png)
+#### Hospital List
+![Hospital List](https://raw.githubusercontent.com/RatulHasan/covid-hospitals-bd/main/assets/Screenshot3.png)
