@@ -12,8 +12,8 @@
 ?>
 <div class="container">
     <div class="row">
-        <div class="col-md-8 offset-md-2 mt-4">
-            <img src="<?php echo esc_url_raw( C19H_ASSETS . '/banner.png' ); ?>" alt="banner">
+        <div class="col-md-12 mt-4">
+            <img width="100%" src="<?php echo esc_url_raw( C19H_ASSETS . '/banner.svg' ); ?>" alt="banner">
         </div>
         <div class="col-md-12 text-center mt-4">
             <h2> <?php esc_html_e( 'Welcome to Hospital Update', 'covid-hospitals-bd' ); ?> </h2>
@@ -23,7 +23,7 @@
         require_once C19H_INC_DIR . '/templates/c19h_search_form.php';
         ?>
         <div class="col-md-12 text-center mt-4">
-            <h3 class="font-monospace"> <?php esc_html_e( 'Currently available', 'covid-hospitals-bd' ); ?> </h3>
+            <h3> <?php esc_html_e( 'Currently available', 'covid-hospitals-bd' ); ?> </h3>
             <p class="text-sm"><?php esc_html_e( 'Tap on each for details', 'covid-hospitals-bd' ); ?></p>
         </div>
         <div class="col-md-8 offset-md-2 mt-4">

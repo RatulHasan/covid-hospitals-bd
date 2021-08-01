@@ -16,7 +16,7 @@
         require_once C19H_INC_DIR . '/templates/c19h_search_form.php';
         $key = isset( $_GET['type'] ) ? sanitize_text_field( wp_unslash( $_GET['type'] ) ) : '';
         if ( ! empty( $key ) || ! empty( $_GET['search'] ) ) {
-            echo wp_kses_post( '<h3><a href=' . get_permalink() . '>' . __( 'Home', 'covid-hospitals-bd' ) . '</a></h3>' );
+            echo wp_kses_post( '<h3><a href=' . get_permalink() . '>&larr;' . __( 'Back', 'covid-hospitals-bd' ) . '</a></h3>' );
         }
         if ( 'icu_hfc' === $key ) {
             $value = esc_html__( 'High flow nasal cannula Beds', 'covid-hospitals-bd' );
@@ -67,7 +67,7 @@
                             <?php esc_html_e( 'Bed information', 'covid-hospitals-bd' ); ?>
                         </p>
                         <div class="table-responsive">
-                            <table class="table table-responsive table-bordered table-striped table-secondary font-monospace">
+                            <table class="table table-responsive table-bordered table-striped table-secondary">
                             <thead>
                             <tr>
                                 <th><?php esc_html_e( 'Type', 'covid-hospitals-bd' ); ?></th>
