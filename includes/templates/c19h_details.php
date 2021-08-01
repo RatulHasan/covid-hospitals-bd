@@ -36,12 +36,8 @@
         }
         ?>
         <div class="col-md-8 offset-md-2">
-            <div class="card-header fixed-bottom text-center alert alert-<?php echo esc_attr( $class ); ?>">
-                <span class="text-start">
-                    <?php echo esc_html( $value ); ?>
-                </span>
-            </div>
             <?php
+            // phpcs:ignore
             if ( $_GET['search'] ) {
                 $nonce = isset( $_GET['c19h_search_field'] ) ? sanitize_text_field( wp_unslash( $_GET['c19h_search_field'] ) ) : '';
                 if ( ! wp_verify_nonce( $nonce, 'c19h_search' ) ) {
@@ -175,7 +171,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <iframe src="https://www.google.com/maps?q=<?php echo esc_html( ( $c19h_available_detail->name ) ); ?>&output=embed" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="https://www.google.com/maps?q=<?php echo esc_html( ( $c19h_available_detail->name ) ); ?>&output=embed" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         <div class="text-center mt-4">
                             <a target="_blank" href="https://www.google.com/maps/dir/Current+Location/<?php echo esc_html( ( $c19h_available_detail->name ) ); ?>" class="border btn btn-primary text-decoration-none py-2 px-4 text-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
