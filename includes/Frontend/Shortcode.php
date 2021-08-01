@@ -61,7 +61,8 @@ class Shortcode {
                 wp_die( esc_html__( 'Are you cheating?', 'custom-role-creator' ) );
             }
 
-            $url = C19h()->endpoint . '/search?query=' . $_GET['search'];
+            $search = preg_replace( '/\s*,\s*/', ',', sanitize_text_field( wp_unslash( $_GET['search'] ) ) );
+            $url    = C19h()->endpoint . '/search?query=' . trim( $search );
             if ( $_GET['current_page'] && ! empty( $_GET['current_page'] ) ) {
                 $url = $url . '&page=' . $_GET['current_page'];
             }

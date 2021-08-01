@@ -66,7 +66,8 @@
                         <p class="card-text">
                             <?php esc_html_e( 'Bed information', 'covid-hospitals-bd' ); ?>
                         </p>
-                        <table class="table table-bordered table-striped table-secondary font-monospace">
+                        <div class="table-responsive">
+                            <table class="table table-responsive table-bordered table-striped table-secondary font-monospace">
                             <thead>
                             <tr>
                                 <th><?php esc_html_e( 'Type', 'covid-hospitals-bd' ); ?></th>
@@ -133,7 +134,8 @@
                             </tr>
                             </tbody>
                         </table>
-                    </div>
+                        </div>
+                        </div>
                     <div class="card-footer">
                         <div class="float-start">
                             <?php esc_html_e( 'Last update', 'covid-hospitals-bd' ); ?>

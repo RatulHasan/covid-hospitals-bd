@@ -29,22 +29,22 @@
         <div class="col-md-8 offset-md-2 mt-4">
             <?php
             foreach ( $c19h_available_details as $key => $c19h_available_detail ) {
-                $class = '';
                 if ( 'icu_hfc' === $key ) {
                     $value = esc_html__( 'High flow nasal cannula Beds', 'covid-hospitals-bd' );
                     $class = 'dark';
-                }
-                if ( 'icu' === $key ) {
+                } elseif ( 'icu' === $key ) {
                     $value = esc_html__( 'ICU Beds', 'covid-hospitals-bd' );
                     $class = 'danger';
-                }
-                if ( 'hdu' === $key ) {
+                } elseif ( 'hdu' === $key ) {
                     $value = esc_html__( 'High Dependency Unit Beds', 'covid-hospitals-bd' );
                     $class = 'warning';
-                }
-                if ( 'gb' === $key ) {
+                } elseif ( 'gb' === $key ) {
                     $value = esc_html__( 'General Beds', 'covid-hospitals-bd' );
                     $class = 'success';
+                } else {
+                    $value = ucwords( esc_html( str_replace( '_', ' ', $key ) ) );
+                    $value = ucwords( esc_html( str_replace( '-', ' ', $value ) ) );
+                    $class = 'info';
                 }
                 ?>
                 <a href="<?php echo esc_url_raw( wp_nonce_url( get_permalink() . '?available=details&type=' . $key, 'c19h_available_details' ) ); ?>">
@@ -52,7 +52,7 @@
                     <span class="text-start">
                         <?php echo esc_html( $value ); ?>
                     </span>
-                        <span class="alignright">
+                        <span class="float-end">
                     <?php
                     echo esc_html( $c19h_available_detail );
                     ?>
