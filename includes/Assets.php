@@ -46,9 +46,10 @@ class Assets {
         foreach ( $scripts as $handle => $script ) {
             wp_register_script( $handle, $script['src'], $script['deps'], $script['ver'], true );
         }
-        wp_enqueue_style( 'crc_bootstrap' );
+        wp_enqueue_style( 'c19h_bootstrap' );
         wp_enqueue_style( 'c19h_custom' );
-        wp_enqueue_script( 'crc_bootstrap-scripts' );
+        wp_enqueue_script( 'c19h_bootstrap-scripts' );
+        wp_enqueue_script( 'c19h_custom-scripts' );
     }
 
     /**
@@ -58,7 +59,7 @@ class Assets {
      */
     public function get_admin_styles() {
         return array(
-            'crc_bootstrap' => array(
+            'c19h_bootstrap' => array(
                 'src'  => C19H_ASSETS . '/css/bootstrap-5/css/bootstrap.min.css',
                 'deps' => array(),
                 'ver'  => C19H_PLUGIN_VERSION,
@@ -79,9 +80,14 @@ class Assets {
      */
     public function get_admin_scripts() {
         return array(
-            'crc_bootstrap-scripts' => array(
+            'c19h_bootstrap-scripts' => array(
                 'src'  => C19H_ASSETS . '/css/bootstrap-5/js/bootstrap.min.js',
                 'deps' => array( 'jquery' ),
+                'ver'  => C19H_PLUGIN_VERSION,
+            ),
+            'c19h_custom-scripts'    => array(
+                'src'  => C19H_ASSETS . '/c19h_custom.js',
+                'deps' => array(),
                 'ver'  => C19H_PLUGIN_VERSION,
             ),
         );

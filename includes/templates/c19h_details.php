@@ -135,9 +135,15 @@
                         </table>
                     </div>
                     <div class="card-footer">
+                        <div class="float-start">
                             <?php esc_html_e( 'Last update', 'covid-hospitals-bd' ); ?>
                             <?php echo esc_html( human_time_diff( strtotime( $c19h_available_detail->updated_at ) ) . ' ago' ); ?>
                         </div>
+                        <div class="float-end">
+                            <?php esc_html_e( 'Updated by', 'covid-hospitals-bd' ); ?>
+                            <?php echo esc_html( $c19h_available_detail->update_by ); ?>
+                        </div>
+                    </div>
                 </div>
                 <?php
             }
