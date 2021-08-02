@@ -99,10 +99,11 @@
                             }
                             ?>
                         </p>
-                        <h5 class="card-text">
-                            <?php esc_html_e( 'Bed information', 'covid-hospitals-bd' ); ?>
-                        </h5>
-                        <div class="table-responsive">
+                        <div class="table-responsive mt-4">
+
+                            <h5 class="card-text">
+                                <?php esc_html_e( 'Bed information', 'covid-hospitals-bd' ); ?>
+                            </h5>
                             <table class="table table-responsive table-bordered table-striped table-secondary">
                                 <thead>
                                 <tr>
