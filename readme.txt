@@ -7,7 +7,7 @@ Tags: covid, covid19, covid19bd, bangladesh, bd
 Requires at least: 5.2
 Tested up to: 5.8
 Requires PHP: 5.6
-Stable tag: trunk
+Stable tag: 1.0.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
