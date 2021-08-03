@@ -213,7 +213,7 @@
             $next_page_url = $all_datas->next_page_url;
 
             // phpcs:ignore
-            $current    = isset( $_GET['current_page'] ) ? $_GET['current_page'] : 1;
+            $current    = isset( $_GET['current_page'] ) ? sanitize_text_field( wp_unslash( $_GET['current_page'] ) ) : 1;
             $link_pages = paginate_links(
                 array(
 					'format'  => '?current_page=%#%',

@@ -47,9 +47,9 @@ class Shortcode {
                 die( esc_html__( 'Are you cheating?', 'covid-hospitals-bd' ) );
             }
 
-            $url = C19h()->endpoint . '/available-hospitals?type=' . $_GET['type'];
+            $url = C19h()->endpoint . '/available-hospitals?type=' . sanitize_text_field( wp_unslash( $_GET['type'] ) );
             if ( $_GET['current_page'] && ! empty( $_GET['current_page'] ) ) {
-                $url = $url . '&page=' . $_GET['current_page'];
+                $url = $url . '&page=' . sanitize_text_field( wp_unslash( $_GET['current_page'] ) );
             }
             $c19h_available_details = Transient::c19h_available_details( $url );
             if ( ! empty( $c19h_available_details ) ) {
@@ -64,7 +64,7 @@ class Shortcode {
             $search = preg_replace( '/\s*,\s*/', ',', sanitize_text_field( wp_unslash( $_GET['search'] ) ) );
             $url    = C19h()->endpoint . '/search?query=' . trim( $search );
             if ( $_GET['current_page'] && ! empty( $_GET['current_page'] ) ) {
-                $url = $url . '&page=' . $_GET['current_page'];
+                $url = $url . '&page=' . sanitize_text_field( wp_unslash( $_GET['current_page'] ) );
             }
 
             $c19h_available_details = Transient::c19h_available_details( $url );
