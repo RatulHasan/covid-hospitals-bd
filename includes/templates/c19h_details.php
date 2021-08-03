@@ -15,9 +15,6 @@
         <?php
         require_once C19H_INC_DIR . '/templates/c19h_search_form.php';
         $key = isset( $_GET['type'] ) ? sanitize_text_field( wp_unslash( $_GET['type'] ) ) : '';
-        if ( ! empty( $key ) || ! empty( $_GET['search'] ) ) {
-            echo wp_kses_post( '<h3><a href=' . get_permalink() . '>&larr;' . __( 'Back', 'covid-hospitals-bd' ) . '</a></h3>' );
-        }
         if ( 'icu_hfc' === $key ) {
             $value = esc_html__( 'High flow nasal cannula Beds', 'covid-hospitals-bd' );
             $class = 'dark';
@@ -37,6 +34,9 @@
         ?>
         <div class="col-md-8 offset-md-2">
             <?php
+            if ( ! empty( $key ) || ! empty( $_GET['search'] ) ) {
+                echo wp_kses_post( '<h3><a href=' . get_permalink() . '>&larr;' . __( 'Back', 'covid-hospitals-bd' ) . '</a></h3>' );
+            }
             // phpcs:ignore
             if ( $_GET['search'] ) {
                 $nonce = isset( $_GET['c19h_search_field'] ) ? sanitize_text_field( wp_unslash( $_GET['c19h_search_field'] ) ) : '';
@@ -104,7 +104,7 @@
                             <h5 class="card-text">
                                 <?php esc_html_e( 'Bed information', 'covid-hospitals-bd' ); ?>
                             </h5>
-                            <table class="table table-responsive table-bordered table-striped table-secondary">
+                            <table class="table table-bordered table-striped table-secondary">
                                 <thead>
                                 <tr>
                                     <th><?php esc_html_e( 'Type', 'covid-hospitals-bd' ); ?></th>
@@ -195,11 +195,11 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <div class="float-start">
+                        <div class="float-left">
                             <?php esc_html_e( 'Last update', 'covid-hospitals-bd' ); ?>
                             <?php echo esc_html( human_time_diff( strtotime( $c19h_available_detail->dghs_update ) ) . ' ago' ); ?>
                         </div>
-                        <div class="float-end">
+                        <div class="float-right">
                             <?php esc_html_e( 'Updated by', 'covid-hospitals-bd' ); ?>
                             <?php echo esc_html( $c19h_available_detail->update_by ); ?>
                         </div>

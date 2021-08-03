@@ -60,7 +60,7 @@ class Assets {
     public function get_admin_styles() {
         return array(
             'c19h_bootstrap' => array(
-                'src'  => C19H_ASSETS . '/css/bootstrap-5/css/bootstrap.min.css',
+                'src'  => C19H_ASSETS . '/css/bootstrap-4/css/bootstrap.min.css',
                 'deps' => array(),
                 'ver'  => C19H_PLUGIN_VERSION,
             ),
@@ -81,7 +81,7 @@ class Assets {
     public function get_admin_scripts() {
         return array(
             'c19h_bootstrap-scripts' => array(
-                'src'  => C19H_ASSETS . '/css/bootstrap-5/js/bootstrap.min.js',
+                'src'  => C19H_ASSETS . '/css/bootstrap-4/js/bootstrap.min.js',
                 'deps' => array( 'jquery' ),
                 'ver'  => C19H_PLUGIN_VERSION,
             ),

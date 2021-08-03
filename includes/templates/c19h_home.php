@@ -49,10 +49,8 @@
                 ?>
                 <a href="<?php echo esc_url_raw( wp_nonce_url( get_permalink() . '?available=details&type=' . $key, 'c19h_available_details' ) ); ?>">
                     <div class="alert alert-<?php echo esc_attr( $class ); ?>" role="alert">
-                    <span class="text-start">
                         <?php echo esc_html( $value ); ?>
-                    </span>
-                        <span class="float-end">
+                        <span class="float-right">
                     <?php
                     echo esc_html( $c19h_available_detail );
                     ?>
