@@ -40,6 +40,9 @@ class Transient {
             if ( is_wp_error( $response ) ) {
                 $error_message = $response->get_error_message();
                 $body          = "Something went wrong: $error_message";
+                if ( ! empty( $error_message ) ) {
+                    die( esc_html( $body ) );
+                }
             }
 
             if ( 200 === $response_code ) {
