@@ -35,6 +35,9 @@ The development repo is [GitHub Repo](https://github.com/RatulHasan/covid-hospit
 == Installation ==
 Installation is fairly straight forward. Install it from the WordPress plugin repository.
 
+= Bugs, technical hints or contribute =
+Please give us feedback, contribute and file technical bugs on [GitHub Repo](https://github.com/RatulHasan/covid-hospitals-bd).
+
 == Frequently Asked Questions ==
 = Who and how this data maintaining? =
 This API have two data sources
@@ -42,9 +45,6 @@ This API have two data sources
 2. Their volunteers.
 = How often its getting updated? =
 In every 10-40 minutes.
-
-= Bugs, technical hints or contribute =
-Please give us feedback, contribute and file technical bugs on [GitHub Repo](https://github.com/RatulHasan/covid-hospitals-bd).
 
 == Screenshots ==
 1. Home
