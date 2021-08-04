@@ -12,7 +12,7 @@ Installation is fairly straight forward. Install it from the WordPress plugin re
 ### Inspired from:
 https://covidhospitalsbd.com/
 
-### Api Documentetion
+### Api Documentation
 https://covidhospitalsbd.com/api
 
 ### Demo
