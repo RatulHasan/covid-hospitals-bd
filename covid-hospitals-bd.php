@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:         Covid Hospitals BD
- * Plugin URI:          https://github.com/RatulHasan/covid-hospitals-bd
+ * Plugin URI:          https://www.ratulhasan.com/covid-hospitals-bd
  * Description:         COVID Dedicated Hospital's Information for Bangladesh.
  * Version:             1.0.0
  * Requires PHP:        5.6

@@ -42,20 +42,20 @@ class Shortcode {
      * @return false|void
      */
     public function cb_c19h_shortcode() {
-        if ( 'details' === $_GET['available'] ) {
+        if ( isset( $_GET['available'] ) && 'details' === $_GET['available'] ) {
             if ( ! wp_verify_nonce( $_GET['_wpnonce'], 'c19h_available_details' ) ) {
                 die( esc_html__( 'Are you cheating?', 'covid-hospitals-bd' ) );
             }
 
             $url = C19h()->endpoint . '/available-hospitals?type=' . sanitize_text_field( wp_unslash( $_GET['type'] ) );
-            if ( $_GET['current_page'] && ! empty( $_GET['current_page'] ) ) {
+            if ( isset( $_GET['current_page'] ) && ! empty( $_GET['current_page'] ) ) {
                 $url = $url . '&page=' . sanitize_text_field( wp_unslash( $_GET['current_page'] ) );
             }
             $c19h_available_details = Transient::c19h_available_details( $url );
             if ( ! empty( $c19h_available_details ) ) {
                 include_once C19H_INC_DIR . '/templates/c19h_details.php';
             }
-        } elseif ( $_GET['search'] ) {
+        } elseif ( isset( $_GET['search'] ) && ! empty( $_GET['search'] ) ) {
             $nonce = isset( $_GET['c19h_search_field'] ) ? sanitize_text_field( wp_unslash( $_GET['c19h_search_field'] ) ) : '';
             if ( ! wp_verify_nonce( $nonce, 'c19h_search' ) ) {
                 wp_die( esc_html__( 'Are you cheating?', 'custom-role-creator' ) );
@@ -63,7 +63,7 @@ class Shortcode {
 
             $search = preg_replace( '/\s*,\s*/', ',', sanitize_text_field( wp_unslash( $_GET['search'] ) ) );
             $url    = C19h()->endpoint . '/search?query=' . trim( $search );
-            if ( $_GET['current_page'] && ! empty( $_GET['current_page'] ) ) {
+            if ( isset( $_GET['current_page'] ) && ! empty( $_GET['current_page'] ) ) {
                 $url = $url . '&page=' . sanitize_text_field( wp_unslash( $_GET['current_page'] ) );
             }
 
