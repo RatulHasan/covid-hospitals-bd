@@ -7,8 +7,7 @@ The plugin provides very basic styling. If anyone has any ideas for a better sty
 The development repo is [GitHub Repo](https://github.com/RatulHasan/covid-hospitals-bd).
 
 ### Installation
-Installation is fairly straight forward. Download this plugin from [GitHub](https://github.com/RatulHasan/covid-hospitals-bd/archive/refs/heads/main.zip) and Install.
-If the installation is okay, go and create a page and/or post or update a page and/or post and insert a Shortcode 👉 [c19h] to show COVID Dedicated Hospital's Information for Bangladesh.
+Installation is fairly straight forward. Install it from the WordPress plugin repository.
 
 ### Inspired from:
 https://covidhospitalsbd.com/
