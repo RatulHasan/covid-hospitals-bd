@@ -15,6 +15,7 @@ A simple and nice WordPress plugin for COVID Dedicated Hospital's Information fo
 
 == Description ==
 A simple and nice WordPress plugin for COVID Dedicated Hospital's Information for Bangladesh.
+If the installation is okay, go and create a page and/or post or update a page and/or post and insert a Shortcode 👉 [c19h] to show COVID Dedicated Hospital's Information for Bangladesh.
 
 The plugin provides very basic styling. If anyone has any ideas for a better styling - pull requests are welcome!
 The development repo is [GitHub Repo](https://github.com/RatulHasan/covid-hospitals-bd).
