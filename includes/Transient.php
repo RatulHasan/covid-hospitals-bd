@@ -41,7 +41,7 @@ class Transient {
                 $error_message = $response->get_error_message();
                 $body          = "Something went wrong: $error_message";
                 if ( ! empty( $error_message ) ) {
-                    die( esc_html( $body ) );
+                    wp_die( esc_html( $body ) );
                 }
             }
 
