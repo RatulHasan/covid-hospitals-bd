@@ -16,12 +16,11 @@ A simple and nice WordPress plugin for COVID Dedicated Hospital's Information fo
 == Description ==
 A simple and nice WordPress plugin for COVID Dedicated Hospital's Information for Bangladesh.
 
-This API have two data sources
-1. DGHS website.
-2. Their volunteers.
-
 The plugin provides very basic styling. If anyone has any ideas for a better styling - pull requests are welcome!
 The development repo is [GitHub Repo](https://github.com/RatulHasan/covid-hospitals-bd).
+
+== Installation ==
+Installation is fairly straight forward. Install it from the WordPress plugin repository.
 
 === Inspired from: ===
 [Covid Hospitals BD](https://covidhospitalsbd.com).
@@ -31,12 +30,6 @@ The development repo is [GitHub Repo](https://github.com/RatulHasan/covid-hospit
 
 === Demo ===
 [Demo](https://ratulhasan.com/covid-hospitals-bd).
-
-== Installation ==
-Installation is fairly straight forward. Install it from the WordPress plugin repository.
-
-= Bugs, technical hints or contribute =
-Please give us feedback, contribute and file technical bugs on [GitHub Repo](https://github.com/RatulHasan/covid-hospitals-bd).
 
 == Frequently Asked Questions ==
 = Who and how this data maintaining? =
@@ -50,6 +43,9 @@ In every 10-40 minutes.
 1. Home
 2. Available Beds
 3. Hospital details
+
+== Bugs, technical hints or contribute ==
+Please give us feedback, contribute and file technical bugs on [GitHub Repo](https://github.com/RatulHasan/covid-hospitals-bd).
 
 == Changelog ==
 = 1.0.0 =
