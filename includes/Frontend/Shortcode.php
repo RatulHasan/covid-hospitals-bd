@@ -37,7 +37,7 @@ class Shortcode {
     }
 
     /**
-     * Callback for My GitHub shortcode
+     * Callback for shortcode
      *
      * @return false|void
      */
@@ -54,6 +54,17 @@ class Shortcode {
             $c19h_available_details = Transient::c19h_available_details( $url );
             if ( ! empty( $c19h_available_details ) ) {
                 include_once C19H_INC_DIR . '/templates/c19h_details.php';
+            }
+        } elseif ( isset( $_GET['hospital'] ) && ! empty( $_GET['hospital'] ) ) {
+            if ( ! wp_verify_nonce( $_GET['_wpnonce'], 'c19h_single_hospital' ) ) {
+                die( esc_html__( 'Are you cheating?', 'covid-hospitals-bd' ) );
+            }
+
+            $url = C19h()->endpoint . '/hospital/' . sanitize_text_field( wp_unslash( $_GET['hospital'] ) );
+
+            $c19h_available_detail = Transient::c19h_available_details( $url );
+            if ( ! empty( $c19h_available_detail ) ) {
+                include_once C19H_INC_DIR . '/templates/c19h_single.php';
             }
         } elseif ( isset( $_GET['search'] ) && ! empty( $_GET['search'] ) ) {
             $nonce = isset( $_GET['c19h_search_field'] ) ? sanitize_text_field( wp_unslash( $_GET['c19h_search_field'] ) ) : '';

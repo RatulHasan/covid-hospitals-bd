@@ -14,27 +14,11 @@
     <div class="row">
         <?php
         require_once C19H_INC_DIR . '/templates/c19h_search_form.php';
-        $key = isset( $_GET['type'] ) ? sanitize_text_field( wp_unslash( $_GET['type'] ) ) : '';
-        if ( 'icu_hfc' === $key ) {
-            $value = esc_html__( 'High flow nasal cannula Beds', 'covid-hospitals-bd' );
-            $class = 'dark';
-        }
-        if ( 'icu' === $key ) {
-            $value = esc_html__( 'ICU Beds', 'covid-hospitals-bd' );
-            $class = 'danger';
-        }
-        if ( 'hdu' === $key ) {
-            $value = esc_html__( 'High Dependency Unit Beds', 'covid-hospitals-bd' );
-            $class = 'warning';
-        }
-        if ( 'gb' === $key ) {
-            $value = esc_html__( 'General Beds', 'covid-hospitals-bd' );
-            $class = 'success';
-        }
+        $type = isset( $_GET['type'] ) ? sanitize_text_field( wp_unslash( $_GET['type'] ) ) : '';
         ?>
         <div class="col-md-8 offset-md-2">
             <?php
-            if ( ! empty( $key ) || ! empty( $_GET['search'] ) ) {
+            if ( ! empty( $type ) || ! empty( $_GET['search'] ) ) {
                 echo wp_kses_post( '<h3><a href=' . get_permalink() . '>&larr;' . __( 'Back', 'covid-hospitals-bd' ) . '</a></h3>' );
             }
             // phpcs:ignore
@@ -49,6 +33,7 @@
             }
             foreach ( $all_datas->data as $key => $c19h_available_detail ) {
                 ?>
+                <a class="text-decoration-none" href="<?php echo esc_url_raw( wp_nonce_url( get_permalink() . '?hospital=' . $c19h_available_detail->id, 'c19h_single_hospital' ) ); ?>">
                 <div class="card box mt-4">
                     <h4 class="card-header">
                         <?php esc_html_e( 'Hospital name:', 'covid-hospitals-bd' ); ?>
@@ -106,111 +91,9 @@
                             }
                             ?>
                         </p>
-                        <div class="table-responsive mt-4">
-                            <h5 class="card-text">
-                                <?php esc_html_e( 'Bed information', 'covid-hospitals-bd' ); ?>
-                            </h5>
-                            <table class="table table-bordered table-striped table-secondary">
-                                <thead>
-                                <tr>
-                                    <th><?php esc_html_e( 'Type', 'covid-hospitals-bd' ); ?></th>
-                                    <th><?php esc_html_e( 'Available', 'covid-hospitals-bd' ); ?></th>
-                                    <th><?php esc_html_e( 'Total', 'covid-hospitals-bd' ); ?></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>
-                                        <?php esc_html_e( 'ICU', 'covid-hospitals-bd' ); ?>
-                                    </td>
-                                    <td class="text-success text-end">
-                                        <?php echo esc_html( ( $c19h_available_detail->icu_beds - $c19h_available_detail->icu_beds_occupied ) ); ?>
-                                    </td>
-                                    <td class="text-end">
-                                        <?php echo esc_html( ( $c19h_available_detail->icu_beds ) ); ?>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <?php esc_html_e( 'High flow nasal cannula Beds', 'covid-hospitals-bd' ); ?>
-                                    </td>
-                                    <td class="text-success text-end">
-                                        <?php
-                                        echo esc_html(
-                                            ( $c19h_available_detail->icu_hfn_beds - $c19h_available_detail->icu_hfn_beds_occupied )
-                                        );
-                                        ?>
-                                    </td>
-                                    <td class="text-end">
-                                        <?php echo esc_html( ( $c19h_available_detail->icu_hfn_beds ) ); ?>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <?php esc_html_e( 'High Dependency Unit', 'covid-hospitals-bd' ); ?>
-                                    </td>
-                                    <td class="text-success text-end">
-                                        <?php
-                                        echo esc_html(
-                                            ( $c19h_available_detail->icu_hdu_beds - $c19h_available_detail->icu_hdu_beds_occupied )
-                                        );
-                                        ?>
-                                    </td>
-                                    <td class="text-end">
-                                        <?php echo esc_html( ( $c19h_available_detail->icu_hdu_beds ) ); ?>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <?php esc_html_e( 'General Beds', 'covid-hospitals-bd' ); ?>
-                                    </td>
-                                    <td class="text-success text-end">
-                                        <?php
-                                        echo esc_html(
-                                            ( $c19h_available_detail->general_beds - $c19h_available_detail->general_beds_occupied )
-                                        );
-                                        ?>
-                                    </td>
-                                    <td class="text-end">
-                                        <?php echo esc_html( ( $c19h_available_detail->general_beds ) ); ?>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <iframe src="https://www.google.com/maps?q=<?php echo esc_html( ( $c19h_available_detail->name ) ); ?>&output=embed" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                        <div class="text-center mt-4">
-                            <a target="_blank" href="https://www.google.com/maps/dir/Current+Location/<?php echo esc_html( ( $c19h_available_detail->name ) ); ?>" class="border btn btn-primary text-decoration-none py-2 px-4 text-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
-                                    <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
-                                    <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                                </svg> <?php esc_html_e( 'Direction', 'covid-hospitals-bd' ); ?>
-                            </a>
-                            <?php
-                            $phone_number = esc_html( $c19h_available_detail->phone_number );
-                            if ( ! empty( $phone_number ) ) {
-                                ?>
-                                <a href="tel:<?php echo esc_html( $phone_number ); ?>" class="btn btn-primary text-decoration-none py-2 px-4 text-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
-                                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
-                                    </svg> <?php esc_html_e( 'Call Hospital', 'covid-hospitals-bd' ); ?>
-                                </a>
-                                <?php
-                            }
-                            ?>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <div class="float-left">
-                            <?php esc_html_e( 'Last update', 'covid-hospitals-bd' ); ?>
-                            <?php echo esc_html( human_time_diff( strtotime( $c19h_available_detail->dghs_update ) ) . ' ago' ); ?>
-                        </div>
-                        <div class="float-right">
-                            <?php esc_html_e( 'Updated by', 'covid-hospitals-bd' ); ?>
-                            <?php echo esc_html( $c19h_available_detail->update_by ); ?>
-                        </div>
                     </div>
                 </div>
+                </a>
                 <?php
             }
 

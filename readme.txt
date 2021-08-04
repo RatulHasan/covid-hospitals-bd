@@ -1,13 +1,13 @@
 === Covid Hospitals BD ===
 Plugin Name: Covid Hospitals BD
-Version: 1.0.0
+Version: 1.0.1
 Author: Ratul Hasan
 Contributors: ratulhasan
 Tags: covid, covid19, covid19bd, bangladesh, bd
 Requires at least: 5.2
 Tested up to: 5.8
 Requires PHP: 5.6
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -49,5 +49,7 @@ In every 10-40 minutes.
 Please give us feedback, contribute and file technical bugs on [GitHub Repo](https://github.com/RatulHasan/covid-hospitals-bd).
 
 == Changelog ==
+= 1.0.1 =
+* Oxygen information added
 = 1.0.0 =
 * Initial Release
