@@ -1,4 +1,4 @@
-=== My Github ===
+=== Covid Hospitals BD ===
 Plugin Name: Covid Hospitals BD
 Version: 1.0.0
 Author: Ratul Hasan
@@ -45,6 +45,11 @@ In every 10-40 minutes.
 
 = Bugs, technical hints or contribute =
 Please give us feedback, contribute and file technical bugs on [GitHub Repo](https://github.com/RatulHasan/covid-hospitals-bd).
+
+== Screenshots ==
+1. Home
+2. Available Beds
+3. Hospital details
 
 == Changelog ==
 = 1.0.0 =
