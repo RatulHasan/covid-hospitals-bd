@@ -26,7 +26,7 @@ Installation is fairly straight forward. Install it from the WordPress plugin re
 === Inspired from: ===
 [Covid Hospitals BD](https://covidhospitalsbd.com).
 
-=== Api Documentetion ===
+=== Api Documentation ===
 [API](https://covidhospitalsbd.com/api).
 
 === Demo ===
