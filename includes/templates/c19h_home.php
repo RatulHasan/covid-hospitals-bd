@@ -29,7 +29,7 @@
         <div class="col-md-8 offset-md-2 mt-4">
             <?php
             foreach ( $c19h_available_details as $key => $c19h_available_detail ) {
-                if ( 'icu_hfc' === $key ) {
+                if ( 'hfnc' === $key ) {
                     $value = esc_html__( 'High flow nasal cannula Beds', 'covid-hospitals-bd' );
                     $class = 'dark';
                 } elseif ( 'icu' === $key ) {
